@@ -31,6 +31,7 @@ gem 'spring',        group: :development
 
 gem 'ffaker'
 
+gem 'momentjs-rails'
 # Use unicorn as the app server
 gem 'unicorn'
 
