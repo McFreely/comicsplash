@@ -5,7 +5,7 @@
 		{{#each story in controller}}
 			<li>
 				<h3 class="news-rank pull-left">{{story.id}}</h3>
-				<a {{bind-attr href=story.link}}><h4><b>{{story.title}}</b> | ({{story.link}})</h4></a>
+				<a {{bind-attr href=story.link}}><h4><b>{{story.title}}</b> | ({{domainRoot story}})</h4></a>
 				<p>{{timeFormat story}} | {{#link-to 'story' story}}XX Comments{{/link-to}}</a></p> 
 			</li>
 		{{else}}
