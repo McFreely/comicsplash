@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toogle Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			{{!-- {{#link-to 'stories' class="navbar-brand"}} --}}<a href="#" class="navbar-brand"><b>ComicNews</b></a>{{!-- {{/link-to}} --}}
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="#">New</a></li>
+				<li><a href="#">Comments</a></li>
+				<li><a href="#">Show</a></li>
+				<li><a href="#">Ask</a></li>
+				<li><a href="#">Jobs</a></li>
+				{{!-- <li>{{#link-to 'storyNew'}}Submit{{/link-to}}</li> --}}
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><b>Sign In</b></a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+{{outlet}}

@@ -1,0 +1,21 @@
+ul.news-item {
+	list-style-type: none;
+
+	li {
+		background: aliceblue;
+		margin-bottom: 10px;
+		padding: 10px 0 10px 10px;
+
+		a.clickable {display: block;}	
+	}
+	
+	.news-rank {
+		float: left;
+		margin-right: 15px;
+	}
+}
+
+.story {
+	h1, .summary {text-align: center;}
+	
+}

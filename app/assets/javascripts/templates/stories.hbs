@@ -1,0 +1,15 @@
+{{outlet}}
+
+<div class="container">
+	<ul class="news-item">
+		{{#each story in controller}}
+			<li>
+				<h3 class="news-rank pull-left">{{story.id}}</h3>
+				<a {{bind-attr href=story.link}}><h4><b>{{story.title}}</b> | ({{story.link}})</h4></a>
+				<p>{{story.created_at}} | {{!-- {{#link-to 'story' story}} --}}XX Comments{{!-- {{/link-to}} --}}</a></p> 
+			</li>
+		{{else}}
+			<p>Sorry, but there is no news here...</p>
+		{{/each}}
+	</ul>
+</div>
