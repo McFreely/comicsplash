@@ -1,15 +1,27 @@
 {{outlet}}
 
 <div class="container">
-	<ul class="news-item">
-		{{#each story in controller}}
-			<li>
-				<h3 class="news-rank pull-left">{{story.id}}</h3>
-				<a {{bind-attr href=story.link}}><h4><b>{{story.title}}</b> | ({{domainRoot story}})</h4></a>
-				<p>{{timeFormat story}} | {{#link-to 'story' story}}XX Comments{{/link-to}}</a></p> 
-			</li>
-		{{else}}
-			<p>Sorry, but there is no news here...</p>
-		{{/each}}
-	</ul>
+	{{#each story in controller}}
+		<div class="row news-item">
+			<div class="col-md-1 rank">
+				<h3>{{story.id}}. <span class="glyphicon glyphicon-flash"></span></h3>
+			</div>
+			<div class="col-md-11">
+				<a {{bind-attr href=story.link}}><h3 class="title">{{story.title}} <span class="domain">({{domainRoot story}})</span></h3></a>
+				<p>
+					<span class="glyphicon glyphicon-stats"></span>
+					43 points by <a href="#">UserName</a>
+					<span class="glyphicon glyphicon-time space"></span>
+					{{timeFormat story}}
+					<span class="glyphicon glyphicon-bullhorn space"></span> 
+					{{#link-to 'story' story}}XX Comments{{/link-to}}
+					<span class="glyphicon glyphicon-remove space"></span>
+					<a href="#" {{action 'delete' story}}>Delete</a>
+
+				</p> 
+			</div>
+		</div>
+	{{else}}
+		<p>Sorry, but there is no news here...</p>
+	{{/each}}
 </div>
