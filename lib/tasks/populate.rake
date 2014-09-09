@@ -2,6 +2,7 @@ namespace :db do
 	task populate: :environment do
 
 		Story.destroy_all
+		User.destroy_all
 
 		30.times do
 			Story.create(
@@ -9,5 +10,10 @@ namespace :db do
 				link: Faker::Internet.http_url
 				)
 		end
+
+		User.create([
+			{email: 'foo@example.com', password: 'foopassword'}
+		])
+
 	end
 end

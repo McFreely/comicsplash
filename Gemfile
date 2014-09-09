@@ -16,6 +16,18 @@ gem 'bootstrap-sass'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'devise', '>=3.0', '<3.1'
+
+gem 'ember-auth-rails'# client-side authentication
+gem 'ember-auth-request-jquery-rails', '~> 1.0' # auth requests via jQuery.ajax
+gem 'ember-auth-response-json-rails', '~> 1.0' # responses in json
+gem 'ember-auth-strategy-token-rails', '~> 1.0' # token authentication
+gem 'ember-auth-session-cookie-rails', '~> 1.0' # use cookies
+gem 'ember-auth-module-ember_data-rails', '~> 1.0' # ember-data integration
+gem 'ember-auth-module-auth_redirectable-rails', '~> 1.0'
+gem 'ember-auth-module-action_redirectable-rails'
+gem 'ember-auth-module-action_redirectable-source'
+gem 'ember-auth-module-rememberable-rails', '~> 1.0'
 
 # Ember related files
 gem 'ember-rails'
@@ -28,6 +40,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+gem 'pry-rails', group: :development
+gem 'rb-readline'
 
 gem 'ffaker'
 

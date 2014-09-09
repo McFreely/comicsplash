@@ -1,0 +1,9 @@
+{{#if auth.signedIn}}
+	{{render 'signOut'}}
+{{else}}
+	<li><button type="button"  class="btn btn-default navbar-btn">{{#link-to 'signIn'}}<b>Sign In</b>{{/link-to}}</button></li>
+{{/if}}
+
+
+
+
