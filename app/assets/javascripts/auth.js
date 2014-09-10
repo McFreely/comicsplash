@@ -18,8 +18,8 @@ App.Auth = Ember.Auth.extend({
 
 	actionRedirectable: {
 		signInRoute: 'stories',
-		// signInSmart: true,
-		// signInBlackList: ['signIn'],
+		signInSmart: true,
+		signInBlackList: ['signIn'],
 		signOutRoute: 'stories'
 	},
 

@@ -14,24 +14,11 @@
 		      {{ view Ember.TextField value=password class="form-control col-sm-10" type="password"}}
 		    </div>
 		  </div>
-
-		  <div class="form-group">
-		  	<div class="col-sm-offset-2 col-sm-10">
-		  	    <div class="checkbox">
-		      		<label>
-		          		{{ view Ember.Checkbox checkedBinding="remember"}} Remember Me
-		       	</label>
-		      	    </div>
-		    	</div>
-		  </div>
 		  
 		  <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
-		      <button type="submit" class="btn btn-default" value="Sign In" {{action "signIn"}}>Submit</button>
+		      <button type="submit" class="btn btn-default" value="users.new" {{action "register"}}>Register</button>
 		    </div>
 		  </div>
 	</form>
-</div>
-<div class="container">
-	{{#link-to 'users.new'}}No Account? Register{{/link-to}}
 </div>

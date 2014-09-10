@@ -1,5 +1,7 @@
 App.StoryRoute = Ember.Route.extend({
 	model: function(params) {
-		return this.store.find('story', params.story_id)
+		console.log('heyooo!')
+		console.log(this.store.find('story', params.story_id));
+		return this.store.find('story', params.story_id);
 	}
 })
