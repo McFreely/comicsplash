@@ -16,6 +16,10 @@ App.Auth = Ember.Auth.extend({
 		route: 'signIn'
 	},
 
+	emberData: {
+		userModel: 'user'
+	},
+
 	rememberable: {
 		tokenKey: 'remember_token',
 		period: 7,

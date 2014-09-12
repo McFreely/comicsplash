@@ -12,7 +12,8 @@ namespace :db do
 		end
 
 		User.create([
-			{email: 'foo@example.com', password: 'foopassword'}
+			{email: 'foo@example.com', username: 'admin', password: 'foopassword'},
+			{email: 'duchess@isis.com', username: 'Sterling_Archer', password: 'lanaiscute'}
 		])
 
 	end
