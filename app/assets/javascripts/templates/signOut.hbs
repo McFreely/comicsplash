@@ -1,7 +1,6 @@
-<li><a href="#">{{auth.user.username}}</a></li>
+<li>{{#link-to 'users' auth.user}}{{auth.user.username}}{{/link-to}}</li>
 <li>
 	<button type="submit" class="btn btn-default navbar-btn" value="Log Out" {{action "signOut"}}>
 		<span class="glyphicon glyphicon-log-out"></span>
-		Log Out
 	</button>
 </li>

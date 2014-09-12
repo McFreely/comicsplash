@@ -7,7 +7,9 @@ App.Router.map(function() {
   	this.route('new', {path: '/stories/submit'});
   });
   this.resource('story', {path: '/stories/:story_id'});
-  this.route('users.new', {path: '/register'})
+  this.resource('users', {path: '/users/:user_id'}, function() {
+    this.route('new', {path: '/register'});
+  })
 });
 
 App.Router.reopen({
