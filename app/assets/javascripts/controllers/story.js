@@ -1,2 +1,2 @@
-App.StoryController = Ember.Controller.extend({
+App.StoryController = Ember.ObjectController.extend({
 });

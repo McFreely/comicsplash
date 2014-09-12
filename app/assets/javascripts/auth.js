@@ -16,13 +16,6 @@ App.Auth = Ember.Auth.extend({
 		route: 'signIn'
 	},
 
-	actionRedirectable: {
-		signInRoute: 'stories',
-		signInSmart: true,
-		signInBlackList: ['signIn'],
-		signOutRoute: 'stories'
-	},
-
 	rememberable: {
 		tokenKey: 'remember_token',
 		period: 7,
