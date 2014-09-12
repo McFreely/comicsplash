@@ -3,22 +3,35 @@
 <div class="container">
 	{{#each story in controller}}
 		<div class="row news-item">
-			<div class="col-md-1 rank">
-				<h3>{{story.id}}. <span class="glyphicon glyphicon-flash"></span></h3>
-			</div>
-			<div class="col-md-11">
-				<a {{bind-attr href=story.link}}><h3 class="title">{{story.title}} <span class="domain">({{domainRoot story}})</span></h3></a>
-				<p>
-					<span class="glyphicon glyphicon-stats"></span>
-					43 points by <a href="#">UserName</a>
-					<span class="glyphicon glyphicon-time space"></span>
-					{{timeFormat story}}
-					<span class="glyphicon glyphicon-bullhorn space"></span> 
-					{{#link-to 'story' story}}XX Comments{{/link-to}}
-					<span class="glyphicon glyphicon-remove space"></span>
-					<a href="#" {{action 'delete' story}}>Delete</a>
 
-				</p> 
+			<div class="col-xs-1 rank">
+				<div class='row'>
+					<div class="col-xs-6">
+							<h3 class="story-id">{{story.id}}<h3>
+					</div>
+
+					<div class="col-xs-6">
+							<h3><span class="glyphicon glyphicon-flash"></span></h3>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-xs-11">
+				<a {{bind-attr href=story.link}}><h3 class="title">{{story.title}} <span class="domain hidden-xs">({{domainRoot story}})</span></h3></a>
+				<p>
+					{{!-- not the most semantic, init? --}}
+					<span class="glyphicon glyphicon-time hidden-xs"></span>
+					<span class="hidden-xs space">{{timeFormat story}}</span>
+
+					<span class="glyphicon glyphicon-stats"></span>
+					<span class="space"> 43 points by <a href="#">UserName</a></span>
+
+					<span class="glyphicon glyphicon-bullhorn"></span>
+					{{#link-to 'story' story}}XX Comments{{/link-to}}
+					{{!-- <span class="glyphicon glyphicon-remove space"></span>
+					<a href="#" {{action 'delete' story}}>Delete</a> --}}
+				</p>
 			</div>
 		</div>
 	{{else}}
