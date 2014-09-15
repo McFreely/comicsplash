@@ -7,7 +7,8 @@ namespace :db do
 		30.times do
 			Story.create(
 				title: Faker::HipsterIpsum.words(rand(6..10)).join(' '),
-				link: Faker::Internet.http_url
+				link: Faker::Internet.http_url,
+				user_id: 2
 				)
 		end
 

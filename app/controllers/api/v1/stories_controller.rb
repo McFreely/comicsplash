@@ -1,17 +1,23 @@
 module	Api::V1
 	class StoriesController < BaseController
-		before_action :auth_only!, only: [:create, :update, :destroy]
+		before_action :auth_only!, only:  [:update, :destroy]
 
 		def index
 			respond_with Story.all
 		end
 
 		def show
-			respond_with story
+			@story = Story.find(params[:id])
+			respond_with @story
 		end
 
 		def create
-			respond_with :api, :v1, Story.create(story_params)
+			@story = Story.new(story_params)
+			if @story.save
+				render json: { story: @story }, status: :created
+			else
+				respond_with @story
+			end
 		end
 
 		def update
@@ -29,7 +35,7 @@ module	Api::V1
 		end
 
 		def story_params
-			params.require(:story).permit(:title, :link)
+			params.require(:story).permit(:title, :link, :user_id)
 		end
 	end
 end

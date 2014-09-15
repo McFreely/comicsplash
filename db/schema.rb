@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20140912165140) do
   create_table "stories", force: true do |t|
     t.string   "title"
     t.string   "link"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
