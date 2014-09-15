@@ -3,6 +3,10 @@
 
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400");
 
+
+// 
+// Various Variables
+// 
 $main-color: #6A50A7;
 $main-color-light: lighten(#8067B7, 15%);
 $main-ultra-light: lighten(#6A50A7, 35%);
@@ -13,6 +17,10 @@ $main-ultra-light: lighten(#6A50A7, 35%);
        -o-transition: $property $duration ease-in-out;
            transition: $property $duration ease-in-out;
 }
+
+// 
+// NavBar
+// 
 
 .navbar-default .navbar-brand,
 .navbar-default,
@@ -28,6 +36,9 @@ nav li button a {
   &:hover {text-decoration: none; color: $main-color;}
 }
 
+// 
+// Stories Pages (index)
+// 
 .news-item {
   margin-bottom: 20px;
   padding: 10px 0 5px 0;
@@ -67,15 +78,29 @@ nav li button a {
   p {color: lighten(black, 75%); }
 }
 
-.story {
-  h1, .summary {text-align: left;}
-  h1 {font-family: Lato; font-weight:300; color: $main-color;}
-
-}
-
 .submit-form {
   padding: 15px 0;
 }
 
+
+
+// 
+// Individual Story Page
+// 
+.story {
+  h1 {font-family: Lato; font-weight:300; color: $main-color;}
+
+}
+
+
+// 
+// User Profile
+// 
+.user-stories {margin-top: 30px;}
+
+
+// 
+// Helper Classes
+// 
 .space {margin-right: 15px;}
 .center {text-align:center;}
