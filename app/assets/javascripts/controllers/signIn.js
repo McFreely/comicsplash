@@ -12,9 +12,15 @@ App.SignInController = Ember.Controller.extend({
 					password: this.get('password'),
 					remember: this.get('remember')
 				}
-			}).then(function() {
-				self.transitionToRoute('stories');
-			});
+			}).then(fulfill, reject);
+
+ 	 		function fulfill() {
+ 	 			self.transitionToRoute('stories');
+ 	 			$.notify('Welcome Back !', 'success', { position:"middle" });
+ 	 		};
+ 	 		function reject() {
+ 	 			$('.btn-notify').notify('wrong email or password',{ position:"right middle" });
+ 	 		};
 		}
 	}
 });
