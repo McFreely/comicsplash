@@ -11,8 +11,11 @@ App.UsersNewController = Ember.ArrayController.extend({
 				username: username,
 				password: password
 			});
-			user.save().then(function() {
-				self.transitionToRoute('signIn');
+			user.save().then(function(){
+  				self.transitionToRoute('signIn');
+  				$.notify('Registration was succesful, you can now login!', 'success');
+			}, function(response) {
+				self.set('errors', response.errors);	
 			});
 		}
 	}
