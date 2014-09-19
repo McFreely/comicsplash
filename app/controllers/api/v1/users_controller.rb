@@ -17,7 +17,7 @@ module Api::V1
     end
 
 		def create
-			user_params = params.require(:user).permit(:email,:password, :username)
+			user_params = params.require(:user).permit(:email,:password, :username, :password_confirmation)
 			@user = User.new(user_params)
 
 			if @user.save

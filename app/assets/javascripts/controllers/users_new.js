@@ -5,11 +5,13 @@ App.UsersNewController = Ember.ArrayController.extend({
 			var email = this.get('email');
 			var username = this.get('username');
 			var password = this.get('password');
+			var passwordConfirmation = this.get('passwordConfirmation')
 
 			var user = this.store.createRecord('user', {
 				email: email,
 				username: username,
-				password: password
+				password: password,
+				passwordConfirmation: passwordConfirmation
 			});
 			user.save().then(function(){
   				self.transitionToRoute('signIn');

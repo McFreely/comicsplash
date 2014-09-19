@@ -1,48 +1,57 @@
 <div class="container">
-	<h2 class="col-md-6 col-md-offset-2 center">Registration</h2>
+	<h2 class="col-md-6 col-md-offset-3 center">Registration</h2>
 				
-	<form class="form-horizontal col-md-6 col-md-offset-2 submit-form" role="form">
+	<form class="form-horizontal col-md-8 col-md-offset-1 submit-form" role="form">
 
 		  <div class="form-group">
-		    <label  class="col-sm-2 control-label">Email:</label>
+		    <label  class="col-sm-4 control-label">Email:</label>
 		    
-		    <div class="col-sm-10">
-		      {{ view Ember.TextField value=email class="form-control col-sm-10"}}
+		    <div class="col-sm-8">
+		      {{ view Ember.TextField value=email class="form-control col-sm-8"}}
+		      {{#each error in errors.email}}
+			    <p class="text-danger">Email {{error}}</span></p>
+			  {{/each}}
 		    </div>
 		  </div>
 
 			<div class="form-group">
-				<label  class="col-sm-2 control-label">Username:</label>
+				<label  class="col-sm-4 control-label">Username:</label>
 				
-				<div class="col-sm-10">
-					{{ view Ember.TextField value=username class="form-control col-sm-10"}}
+				<div class="col-sm-8">
+					{{ view Ember.TextField value=username class="form-control col-sm-8"}}
+					{{#each error in errors.username}}  
+				 		<p class="text-danger">Username {{error}}</span></p>
+					{{/each}}
 				</div>
 			</div>
 
 		  <div class="form-group">
-		    <label class="col-sm-2 control-label">Password:</label>
+		    <label class="col-sm-4 control-label">Password:</label>
 		    
-		    <div class="col-sm-10">
-		      {{ view Ember.TextField value=password class="form-control col-sm-10" type="password"}}
+		    <div class="col-sm-8">
+		      {{ view Ember.TextField value=password class="form-control col-sm-8" type="password"}}
+		      {{#each error in errors.password}}
+			    <p class="text-danger">Password {{error}}</span></p>
+			  {{/each}}
 		    </div>
 		  </div>
 
 		  <div class="form-group">
-		    <div class="col-sm-offset-2 col-sm-10">
+		    <label class="col-sm-4 control-label">Password Confirmation:</label>
+		    
+		    <div class="col-sm-8">
+		      {{ view Ember.TextField value=passwordConfirmation class="form-control col-sm-8" type="password"}}
+			  {{#each error in errors.passwordConfirmation}}
+			  	<p class="text-danger">Confirmation {{error}}</p>
+			  {{/each}}
+		    </div>
+		  </div>
+
+		  <div class="form-group">
+		    <div class="col-sm-offset-4 col-sm-8">
 		      <button type="submit" class="btn btn-default" value="users.new" {{action "register"}}>Register</button>
 		    </div>
 		  </div>
 	</form>
 
-	<div class="col-md-4">
-			{{#each error in errors.email}}
-			    <h4><span class="label label-danger">Email {{error}}</span></h4>
-			{{/each}}
-			{{#each error in errors.username}}  
-				  <h4><span class="label label-danger">Username {{error}}</span></h4>
-			{{/each}}
-			{{#each error in errors.password}}
-			    <h4><span class="label label-danger">Password {{error}}</span></h4>
-			{{/each}}
-	</div>
 </div>
