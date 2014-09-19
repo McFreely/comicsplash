@@ -4,7 +4,7 @@
 </div>
 <div class="container user-stories">
 	<h3>Stories submited:</h3>
-	<ul class="list-group col-sm-4">
+	<ul class="list-group col-sm-6">
 	{{#each story in stories}}
 		<li class="list-group-item">{{#link-to 'story' story}}{{story.title}}{{/link-to}}<span class="badge">14 pts</span></li>
 	{{/each}}
