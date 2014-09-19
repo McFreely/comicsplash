@@ -1,9 +1,15 @@
 App.SignInController = Ember.Controller.extend({
 	email: null,
 	password: null,
-	remember: false,
+	remember: true,
 
 	actions: {
+		error: function(error, transition) {
+			console.log(error);
+			if (error.status === 401) {
+				console/log('captured');
+			}
+		},
 		signIn: function() {
 			var self = this;
 			return this.get('auth').signIn({
@@ -12,15 +18,10 @@ App.SignInController = Ember.Controller.extend({
 					password: this.get('password'),
 					remember: this.get('remember')
 				}
-			}).then(fulfill, reject);
-
- 	 		function fulfill() {
- 	 			self.transitionToRoute('stories');
- 	 			$.notify('Welcome Back !', 'success', { position:"middle" });
- 	 		};
- 	 		function reject() {
- 	 			$('.btn-notify').notify('wrong email or password',{ position:"right middle" });
- 	 		};
+			}).then(function() {
+		 			self.transitionToRoute('stories');
+		 			$.notify('Welcome Back !', 'success', { position:"middle" });
+		 		});		
 		}
 	}
 });
