@@ -18,7 +18,7 @@
 			</div>
 
 			<div class="col-xs-11">
-				<a {{bind-attr href=story.link}}><h3 class="title">{{story.title}} <span class="domain hidden-xs">({{story.link}})</span></h3></a>
+				<a {{bind-attr href=story.link}}><h3 class="title">{{story.title}} <span class="domain hidden-xs">({{domainRoot story}})</span></h3></a>
 				<p>
 					{{!-- not the most semantic, init? --}}
 					<span class="glyphicon glyphicon-time hidden-xs"></span>
