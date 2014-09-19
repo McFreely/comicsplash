@@ -6,8 +6,8 @@ App.StoriesNewController = Ember.Controller.extend({
 			var story = this.store.createRecord('story', this.get('fields'));
 			story.set('user', this.auth.get('user'));
 			story.save().then(function() {
-				self.transitionTo('stories');
-			});
+				self.transitionToRoute('story', story);
+			}, function() {});
 		}
 	}
 });
