@@ -7,7 +7,7 @@ App.StoriesNewController = Ember.Controller.extend({
 			story.set('user', this.auth.get('user'));
 			story.save().then(function() {
 				self.transitionToRoute('story', story);
-			}, function() {});
+			}, function(response) {self.set('errors', response.errors)});
 		}
 	}
 });

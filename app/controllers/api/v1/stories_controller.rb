@@ -16,7 +16,7 @@ module	Api::V1
 			if @story.save
 				render json: { story: @story }, status: :created
 			else
-				respond_with @story
+				render json: {errors: @story.errors.as_json}, status: 422
 			end
 		end
 
