@@ -1,6 +1,6 @@
 module Api::V1
 	class UsersController < BaseController
-		# before_action :auth_only!, only: [:index, :show]
+		before_action :auth_only!, only: [:index, :show, :create]
 
 		def index
 			if params[:ids]
@@ -12,9 +12,9 @@ module Api::V1
 		end
 
 		def show
-      @user = User.find(params[:id])
-      respond_with @user
-    end
+	      @user = User.find(params[:id])
+	      respond_with @user
+	    end
 
 		def create
 			user_params = params.require(:user).permit(:email,:password, :username, :password_confirmation)
